@@ -84,7 +84,7 @@ react-native link react-native-picker-module
 |confirmButton|string|`Confirm`                                         |**No**        |IOS         |
 |onCancel     |func  |-                                                 |**No**    |Android, IOS|
 |selectedColor|string|-                                                 |**No**    |Android, IOS|
-|confirmButtonAlwaysEnabled|boolean|false                                                 |**No**    |Android, IOS|
+|confirmButtonAlwaysEnabled|boolean|true                                                 |**No**    |Android, IOS|
 
 
 ## Usage with Hooks
