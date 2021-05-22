@@ -30,6 +30,7 @@ public class RNSpinnerAdapter extends RecyclerView.Adapter<RNSpinnerAdapter.MyVi
     Callback callback;
     String selectedValue;
     ReadableArray selectedColor;
+    boolean confirmButtonAlwaysEnabled;
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
         LinearLayout linearLayout;
@@ -40,12 +41,13 @@ public class RNSpinnerAdapter extends RecyclerView.Adapter<RNSpinnerAdapter.MyVi
         }
     }
 
-    RNSpinnerAdapter(ReadableArray myDataset, RNSpinner androidSpinner, Callback spinnerCallback, String mSelectedValue, ReadableArray mSelectedColor) {
+    RNSpinnerAdapter(ReadableArray myDataset, RNSpinner androidSpinner, Callback spinnerCallback, String mSelectedValue, ReadableArray mSelectedColor, boolean confirmButtonAlwaysEnabled) {
         mDataset = myDataset;
         rnSpinner = androidSpinner;
         callback = spinnerCallback;
         selectedValue = mSelectedValue;
         selectedColor = mSelectedColor;
+        this.confirmButtonAlwaysEnabled = confirmButtonAlwaysEnabled;
     }
 
     @Override
@@ -101,7 +103,7 @@ public class RNSpinnerAdapter extends RecyclerView.Adapter<RNSpinnerAdapter.MyVi
         final String finalValue = value;
         if (selectedValue != null) {
             if (selectedValue.equals(value)) {
-                button.setEnabled(false);
+                button.setEnabled(confirmButtonAlwaysEnabled);
                 if (selectedColor != null) {
                     button.setTextColor(Color.rgb(selectedColor.getInt(0), selectedColor.getInt(1), selectedColor.getInt(2)));
                 }

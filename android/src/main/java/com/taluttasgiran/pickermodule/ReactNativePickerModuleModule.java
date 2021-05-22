@@ -21,10 +21,11 @@ public class ReactNativePickerModuleModule extends ReactContextBaseJavaModule {
             String selectedValue,
             String title,
             ReadableArray selectedColor,
+            boolean confirmButtonAlwaysEnabled,
             final Callback onClickCallback,
             final Callback onCancelCallback
     ) {
-        rnSpinner = new RNSpinner(getCurrentActivity(), items, selectedValue, title, selectedColor, onClickCallback, onCancelCallback);
+        rnSpinner = new RNSpinner(getCurrentActivity(), items, selectedValue, title, selectedColor, confirmButtonAlwaysEnabled, onClickCallback, onCancelCallback);
         rnSpinner.show();
     }
 

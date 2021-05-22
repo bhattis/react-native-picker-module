@@ -25,7 +25,8 @@ export interface ReactNativePickerModuleProps {
   cancelButtonTextStyle?: object
   backdropColor?: string
   backdropOpacity?: number
-  selectedColor?: string
+  selectedColor?: string,
+  confirmButtonAlwaysEnabled?: boolean,
 }
 
 export default class ReactNativePickerModule extends React.Component<ReactNativePickerModuleProps> {
